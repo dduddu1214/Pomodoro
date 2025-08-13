@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://your-pomodoro-app.vercel.app'), // 실제 URL로 변경하세요
+  metadataBase: new URL('https://pomodoro-self-zeta.vercel.app/'),
   alternates: {
     canonical: '/',
   },
