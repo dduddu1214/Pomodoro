@@ -1,121 +1,84 @@
-# 포모도로 타이머
+# 포모도로 타이머 | Pomodoro Timer
 
-Next.js, TypeScript, Tailwind CSS로 제작된 모던하고 세련된 포모도로 타이머입니다. 검증된 25분 집중 + 5분 휴식 기법으로 생산성을 높여보세요.
+> 25분 집중 + 5분 휴식, 검증된 포모도로 기법으로 생산성을 높여보세요.
 
-![포모도로 타이머 미리보기](./public/preview.png)
+[![Deploy with Vercel](https://img.shields.io/badge/배포-Vercel-black?logo=vercel)](https://pomodoro-self-zeta.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## ✨ 주요 기능
+<p align="center">
+  <img src="./public/preview.png" alt="포모도로 타이머 미리보기" width="400" />
+</p>
 
-- **클래식 포모도로 기법**: 25분 집중 + 5분 휴식 사이클
-- **모던 글래스모피즘 디자인**: 글래스 효과가 적용된 아름다운 다크 테마
-- **시각적 진행률 링**: 애니메이션이 적용된 원형 진행률 표시기
-- **세션 관리**: 집중, 짧은 휴식, 긴 휴식 간편 전환
-- **자동 진행**: 세션 완료 시 자동으로 다음 단계로 전환
-- **반응형 디자인**: 모든 화면 크기에서 완벽하게 작동
-- **한글 폰트 지원**: Pretendard 폰트로 최적화된 한글 표시
+<p align="center">
+  <a href="https://pomodoro-self-zeta.vercel.app/"><strong>지금 사용해보기 →</strong></a>
+</p>
 
-## 🚀 기술 스택
+---
 
-- **프레임워크**: Next.js 14 (App Router)
-- **언어**: TypeScript
-- **스타일링**: Tailwind CSS
-- **아이콘**: Lucide React
-- **폰트**: Inter, JetBrains Mono, Pretendard
+## 주요 기능
 
-## 🎯 세션 유형
+- **포모도로 사이클** — 25분 집중 → 5분 짧은 휴식, 4사이클 후 15분 긴 휴식
+- **글래스모피즘 UI** — 다크 테마 위 글래스 효과, 네온 글로우 애니메이션
+- **원형 진행률 링** — SVG 기반 애니메이션 타이머 표시
+- **정확한 타이머** — `Date.now()` 기반으로 비활성 탭에서도 정확히 작동
+- **알림 시스템** — 타이머 완료 시 알림음(Web Audio API) + 브라우저 알림
+- **자동 시작** — 세션 완료 후 자동으로 다음 세션 시작 (토글)
+- **키보드 단축키** — `Space` 시작/일시정지, `R` 리셋, `N` 다음 세션
+- **탭 타이틀 타이머** — 다른 탭에서도 남은 시간 확인 가능
+- **상태 보존** — 완료 횟수 localStorage 저장, 날짜 변경 시 자동 초기화
+- **반응형** — 모바일, 태블릿, 데스크톱 모두 지원
+- **PWA 지원** — 홈 화면에 추가하여 앱처럼 사용 가능
 
-| 세션 유형 | 시간 | 설명 |
-|----------|------|------|
-| 집중 시간 | 25분 | 깊은 집중 작업 시간 |
-| 짧은 휴식 | 5분 | 집중 세션 사이의 짧은 휴식 |
-| 긴 휴식 | 15분 | 4번의 집중 세션 후 긴 휴식 |
+## 세션 유형
 
-## 🛠️ 설치 및 실행
+| 세션 | 시간 | 색상 | 설명 |
+|------|------|------|------|
+| 집중 시간 | 25분 | 오렌지 → 레드 | 깊은 집중 작업 |
+| 짧은 휴식 | 5분 | 틸 → 시안 | 집중 사이의 짧은 휴식 |
+| 긴 휴식 | 15분 | 인디고 → 퍼플 | 4회 집중 후 긴 휴식 |
 
-### 필수 요구사항
-- Node.js 18+ 
-- npm 또는 yarn 또는 pnpm
+## 기술 스택
 
-### 클론 및 설치
+| 분류 | 기술 |
+|------|------|
+| 프레임워크 | Next.js 15 (App Router) |
+| 언어 | TypeScript 5 |
+| 스타일링 | Tailwind CSS 4 |
+| 아이콘 | Lucide React |
+| 폰트 | Inter, JetBrains Mono, Pretendard |
+| 배포 | Vercel |
+
+## 시작하기
+
 ```bash
-# 저장소 클론
-git clone https://github.com/yourusername/pomodoro-timer.git
-cd pomodoro-timer
+# 클론
+git clone https://github.com/dduddu1214/Pomodoro.git
+cd Pomodoro
 
 # 의존성 설치
 npm install
-# 또는
-yarn install
-# 또는
-pnpm install
-```
 
-### 개발 환경 실행
-```bash
 # 개발 서버 시작
 npm run dev
-# 또는
-yarn dev
-# 또는
-pnpm dev
 ```
 
 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어주세요.
 
-### 프로덕션 빌드
+### 빌드
+
 ```bash
-# 애플리케이션 빌드
-npm run build
-# 또는
-yarn build
-# 또는
-pnpm build
-
-# 프로덕션 서버 시작
-npm start
-# 또는
-yarn start
-# 또는
-pnpm start
+npm run build    # 프로덕션 빌드
+npm start        # 프로덕션 서버
+npm run lint     # ESLint 검사
 ```
 
-## 📁 프로젝트 구조
-
-```
-pomodoro-timer/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── globals.css
-│   ├── components/
-│   │   ├── PomodoroTimer.tsx     # 메인 타이머 컴포넌트
-│   │   ├── TimerDisplay.tsx      # 시각적 타이머 표시
-│   │   └── TimerControls.tsx     # 컨트롤 버튼들
-│   ├── hooks/
-│   │   └── useTimer.ts           # 타이머 로직 훅
-│   ├── types/
-│   │   └── timer.ts              # TypeScript 타입 정의
-│   └── utils/
-│       ├── constants.ts          # 앱 상수
-│       └── time.ts               # 시간 유틸리티 함수
-├── public/
-├── README.md
-└── package.json
-```
-
-## 🎨 디자인 특징
-
-- **다크 글래스모피즘**: 투명도와 백드롭 블러 효과의 모던한 디자인
-- **네온 글로우**: 진행률 링과 버튼의 은은한 발광 효과
-- **부드러운 애니메이션**: cubic-bezier 이징을 사용한 CSS 트랜지션
-- **마이크로 인터랙션**: 호버 효과와 버튼 피드백
-- **그라디언트 버튼**: 세션 유형별 색상 구분된 그라디언트
-
-## 🔧 커스터마이징
+## 커스터마이징
 
 ### 타이머 시간 변경
-`src/utils/constants.ts`에서 상수를 수정하세요:
+
+`src/utils/constants.ts`에서 수정:
 
 ```typescript
 export const TIMER_SETTINGS = {
@@ -126,49 +89,19 @@ export const TIMER_SETTINGS = {
 ```
 
 ### 색상 변경
-컴포넌트 파일에서 색상 스키마를 수정할 수 있습니다:
-- `PomodoroTimer.tsx` - 세션 버튼 색상
-- `TimerDisplay.tsx` - 진행률 링 색상
-- `TimerControls.tsx` - 컨트롤 버튼 색상
 
-## 📱 반응형 디자인
+| 파일 | 역할 |
+|------|------|
+| `PomodoroTimer.tsx` | 세션 버튼 색상 |
+| `TimerDisplay.tsx` | 진행률 링 색상 |
+| `TimerControls.tsx` | 컨트롤 버튼 색상 |
 
-타이머는 다음 환경에서 완벽하게 작동합니다:
-- 데스크톱 컴퓨터
-- 태블릿
-- 모바일 폰
-- 다양한 화면 방향
+## 라이선스
 
-## 🌟 향후 개선 사항
-
-- [ ] 알림음 추가
-- [ ] 브라우저 알림
-- [ ] 세션 통계
-- [ ] 사용자 정의 시간 설정
-- [ ] 다크/라이트 테마 토글
-- [ ] 키보드 단축키
-- [ ] 설정 로컬 저장
-
-## 🤝 기여하기
-
-1. 저장소를 포크하세요
-2. 기능 브랜치를 생성하세요 (`git checkout -b feature/amazing-feature`)
-3. 변경사항을 커밋하세요 (`git commit -m 'Add some amazing feature'`)
-4. 브랜치에 푸시하세요 (`git push origin feature/amazing-feature`)
-5. Pull Request를 열어주세요
-
-## 📄 라이선스
-
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
-
-## 💝 감사의 말
-
-- Francesco Cirillo가 창안한 포모도로 기법®에서 영감을 받았습니다
-- 모던 생산성 앱들의 디자인에서 영감을 얻었습니다
-- Pretendard 폰트로 한글 타이포그래피를 최적화했습니다
+MIT License. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
 ---
 
-**Made by devdduddu ❤️**
+**Made by [devdduddu](https://github.com/dduddu1214)**
 
 > 30일 챌린지의 일환: 매일 하나씩 서비스를 만들고 출시하기!

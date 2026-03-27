@@ -16,7 +16,6 @@ export default function TimerControls({
   onReset,
   onNext,
 }: TimerControlsProps) {
-  const isRunning = state === 'running';
   const canStart = state === 'idle' || state === 'paused';
   const canPause = state === 'running';
   const isCompleted = state === 'completed';
